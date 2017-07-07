@@ -2,6 +2,7 @@
 An add on for popular Source Engine sandbox Garry's Mod, originally created as a modification for Valve original Half-Life 2. The addon became standalone and massed a great community.
 
 Anywho, World Vector Tools contains two addons;
+
 -SSP (Simple Spawn Points)
      -Allows for ingame setting of player spawn points, which remain between sessions per world.
 -SS (Simple Spawner)
