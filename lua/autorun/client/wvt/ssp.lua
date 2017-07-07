@@ -1,0 +1,10 @@
+concommand.Add( "ssp_add", function(ply)
+net.Start( "ssp_add" )
+net.WriteVector( ply:GetPos() + Vector( 0, 20, 0 ) )
+net.Send()
+end )
+
+concommand.Add( "ssp_clear", function()
+net.Start( "ssp_clear" )
+net.Send()
+end )
