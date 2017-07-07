@@ -9,9 +9,13 @@ Anywho, World Vector Tools contains two addons;
      -Creates entity spawners during game sessions with two simple commands.
      
 COMMAND LIST
+
 ssp_add
+
 ssp_clear
+
 ss_add <entity> <interval>
+
 ss_clear
 
 TODO LIST
