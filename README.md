@@ -18,4 +18,4 @@ Create more customizable spawns and spawnpoints (like launching players upwards 
 
 Clean up code redundancies, problems, and inneficiencies.
 
-More soon.
+More soon!
