@@ -14,6 +14,8 @@ ssp_add
 
 ssp_clear
 
+ssp_set_type
+
 ss_add <entity> <interval>
 
 ss_clear
