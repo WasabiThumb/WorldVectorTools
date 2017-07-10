@@ -40,10 +40,17 @@ if file.Exists( fName, "DATA" ) then
 local ftable = util.JSONToTable( file.Read( fName ) )
 ply:SetPos( table.Random( ftable ) )
 end
+if file.Exists( cspName, "DATA" ) then
+          local csp = file.Read( cspName )
+          if ( csp == "ulaunch" ) then ply:SetVelocity( Vector( 0, 0, 200 ) ) 
+          else if ( csp == "flaunch" ) then ply:SetVelocity( self.Owner:GetForward() * 200 + Vector( 0, 0, 200 ) )
+          end
+end
 end )
 
 util.AddNetworkString( "ssp_add" )
 util.AddNetworkString( "ssp_clear" )
+util.AddNetworkString( "ssp_set_type" )
 
 net.Receive( "ssp_add", function( len, ply )
 if !ply:IsSuperAdmin() then return end
@@ -53,4 +60,8 @@ end )
 net.Receive( "ssp_clear", function( len, ply )
 if !ply:IsSuperAdmin() then return end
 clearSpawnPoints()
+end )
+      
+net.Receive( "ssp_set_type", function( len, ply )
+file.Write( cspName, net.ReadString() )
 end )
