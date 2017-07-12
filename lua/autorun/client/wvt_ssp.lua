@@ -1,0 +1,16 @@
+concommand.Add( "ssp_add", function(ply)
+net.Start( "ssp_add" )
+net.WriteVector( ply:GetPos() + Vector( 0, 20, 0 ) )
+net.SendToServer()
+end, nil, "ssp_add" )
+
+concommand.Add( "ssp_clear", function()
+net.Start( "ssp_clear" )
+net.SendToServer()
+end, nil, "ssp_clear" )
+
+concommand.Add( "ssp_set_type", function(ply, cmd, args)
+net.Start( "ssp_set_type" )
+net.WriteString( args[1] )
+net.SendToServer()
+end, nil, "ssp_set_type <type> | Types are: ulaunch, flaunch" )
