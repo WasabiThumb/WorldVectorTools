@@ -1,5 +1,4 @@
 if SERVER then
-	AddCSLuaFile ("shared.lua")
 	SWEP.Weight = 5
 	SWEP.AutoSwitchTo = false
 	SWEP.AutoSwitchFrom = false
@@ -15,19 +14,15 @@ SWEP.Contact = "wasabithumbs@gmail.com"
 SWEP.Purpose = "Releives some of the stress of console commands."
 SWEP.Instructions = "Click to set spawn point, reload to clear points."
 SWEP.Category = "World Vector Tools"
-SWEP.Spawnable = false
+SWEP.Spawnable = true
 SWEP.AdminSpawnable = true
 SWEP.ViewModel = "models/weapons/c_toolgun.mdl"
 SWEP.WorldModel = "models/weapons/w_toolgun.mdl"
 
 function SWEP:PrimaryAttack()
-  if CLIENT then
-    LocalPlayer():ConCommand("ssp_add")
-  end
+	RunConsoleCommand("ssp_add")
 end
 
 function SWEP:Reload()
-  if CLIENT then
-    LocalPlayer():ConCommand("ssp_clear")
-  end
+	RunConsoleCommand("ssp_clear")
 end
